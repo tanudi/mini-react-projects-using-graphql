@@ -22,7 +22,7 @@ const GET_USERS = `
 export default function Users() {
   const [users, setUsers] = useState<User[]>([]);
   const [searchName, setSearchName] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
   const debouncedValue = useDebounce(searchName, 300);
   useEffect(() => {
     fetchGraphQL(GET_USERS, {}).then((data) => setUsers(data.users));
