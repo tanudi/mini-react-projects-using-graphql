@@ -1,8 +1,8 @@
-import './App.css'
-import Users from './Users'
+import "./App.css";
+import Users from "./components/Users";
 
 function App() {
-  return <Users></Users>
+  return <Users></Users>;
 }
 
-export default App
+export default App;
