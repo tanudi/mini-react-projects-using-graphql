@@ -3,7 +3,7 @@
  * In a real app this would be replaced by a DB query (e.g. Postgres, MongoDB).
  */
 
-import { User } from "./types";
+import { User, Product } from "./types";
 
 export const users: User[] = [
   {
@@ -36,4 +36,17 @@ export const users: User[] = [
     age: 31,
     address: { street: "33 Elm St", city: "Madrid", country: "Spain" },
   },
+];
+
+/**
+ * Mock product catalogue.
+ * Each entry matches the Product interface and the GraphQL Product type.
+ * Prices are in USD.
+ */
+export const products: Product[] = [
+  { id: "1", name: "Wireless Headphones", category: "Electronics", price: 79.99 },
+  { id: "2", name: "Running Shoes",       category: "Footwear",    price: 59.99 },
+  { id: "3", name: "Coffee Maker",        category: "Appliances",  price: 49.99 },
+  { id: "4", name: "Yoga Mat",            category: "Sports",      price: 24.99 },
+  { id: "5", name: "Desk Lamp",           category: "Furniture",   price: 34.99 },
 ];

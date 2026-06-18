@@ -38,6 +38,16 @@ export const typeDefs = gql`
     address: Address!
   }
 
+  # Represents a product in the catalogue.
+  type Product {
+    id: ID!
+    name: String!
+    # Groups related products together (e.g. "Electronics", "Clothing").
+    category: String!
+    # Price in USD, stored as a float (e.g. 29.99).
+    price: Float!
+  }
+
   # Root Query type — the entry point for all read operations.
   type Query {
     """
@@ -46,5 +56,12 @@ export const typeDefs = gql`
     Example: users(name: "ali") returns Alice, Alibaba, etc.
     """
     users(name: String): [User!]!
+
+    """
+    Returns a list of products.
+    Optionally filter by category (case-insensitive exact match).
+    Example: products(category: "electronics") returns all Electronics items.
+    """
+    products(category: String): [Product!]!
   }
 `;

@@ -23,7 +23,7 @@
  *                               (for root Query fields, parent is undefined)
  */
 
-import { users } from "./data";
+import { users, products } from "./data";
 
 export const resolvers = {
   Query: {
@@ -41,6 +41,22 @@ export const resolvers = {
       // Case-insensitive partial match on the name field
       const search = args.name.toLowerCase();
       return users.filter((user) => user.name.toLowerCase().includes(search));
+    },
+
+    /**
+     * Fetches products with optional category filter.
+     * @param _parent - unused for root queries
+     * @param args.category - optional category string (case-insensitive exact match)
+     */
+    products: (_parent: unknown, args: { category?: string }) => {
+      if (!args.category) {
+        // No filter — return all products
+        return products;
+      }
+
+      // Case-insensitive exact match on the category field
+      const search = args.category.toLowerCase();
+      return products.filter((product) => product.category.toLowerCase() === search);
     },
   },
 };

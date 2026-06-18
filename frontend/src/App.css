@@ -205,3 +205,22 @@ input {
   width: 50%;
   text-align: left;
 }
+
+.productList {
+  display: flex table-column;
+  justify-self: center;
+  border-collapse: collapse;
+
+  th,
+  td {
+    border: 0.1rem solid #eee;
+    padding: 0.5rem;
+  }
+}
+
+.selectBox {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 1rem;
+}

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-import fetchGraphQL from "../service/users.service";
-import type { User } from "../model/user";
+import fetchGraphQL from "../service/app.service";
+import type { User } from "../model/types";
 import useDebounce from "../hooks/useDebounce";
 
 const GET_USERS = `
